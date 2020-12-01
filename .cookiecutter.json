@@ -1,0 +1,10 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Pablo Palazon",
+  "email": "pablo.palazon@gmail.com",
+  "friendly_name": "My Clipping to org-mode notes",
+  "github_user": "ppalazon",
+  "package_name": "pyclip2org",
+  "project_name": "pyclip2org",
+  "version": "0.0.0"
+}
