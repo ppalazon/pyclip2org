@@ -22,6 +22,10 @@ Changelog = "https://github.com/ppalazon/pyclip2org/releases"
 python = "^3.6.1"
 click = "^7.0"
 nox-poetry = "^0.5.0"
+orgparse = "^0.2.1"
+python-slugify = "^4.0.1"
+textwrap3 = "^0.9.2"
+dateparser = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1.2"
@@ -47,6 +51,7 @@ sphinx-rtd-theme = "^0.5.0"
 sphinx-click = "^2.5.0"
 Pygments = "^2.7.2"
 nox-poetry = "^0.5.0"
+rope = "^0.18.0"
 
 [tool.poetry.scripts]
 pyclip2org = "pyclip2org.__main__:main"
