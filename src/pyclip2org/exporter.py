@@ -1,13 +1,14 @@
 """Exporter module for books and clippings."""
+from typing import Any
 
 from slugify import slugify
 
 
-def write_book(book, directory):
+def write_book(book: Any, directory: Any) -> None:
     """Write all clippings in a file within the output folder."""
     if not book.title or len(book.clippings) == 0:
         print(f"Not writting {book.title} because name is {len(book.clippings)}")
-        return False
+        return None
     clean_title = "".join(
         [c for c in book.title if c.isalpha() or c.isdigit() or c == " "]
     ).rstrip()

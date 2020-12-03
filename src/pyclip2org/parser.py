@@ -1,9 +1,11 @@
 """Parse My Clippings highlights from kindle."""
+import re
+from typing import Any
+from typing import List
 
 from textwrap3 import wrap
 
 # import dateparser
-import re
 
 
 regexp_author = re.compile(r"\((.*?)\)", re.IGNORECASE)
@@ -16,30 +18,30 @@ regexp_date = re.compile(r"Añadido el\s+(.+)$", re.IGNORECASE)
 class Book:
     """Book information with a list of clippings."""
 
-    def __init__(self, title, author):
+    def __init__(self, title: str, author: str) -> None:
         """Basic initialization of a Book."""
         self.author = author
         self.title = title
-        self.clippings = []
+        self.clippings: List[Any] = []
 
-    def add_clipping(self, clipping):
+    def add_clipping(self, clipping: Any) -> None:
         """Add a clipping to this list."""
         if clipping and clipping.content:
             self.clippings.append(clipping)
 
-    def get_hightlights(self):
+    def get_hightlights(self) -> List[Any]:
         """Get all hightlights of the book."""
         return [m for m in self.clippings if m.type == "HIGHLIGHT"]
 
-    def get_marks(self):
+    def get_marks(self) -> List[Any]:
         """Get all marks of the book."""
         return [m for m in self.clippings if m.type == "MARK"]
 
-    def get_notes(self):
+    def get_notes(self) -> List[Any]:
         """Get all notes of the book."""
         return [m for m in self.clippings if m.type == "NOTE"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Generate a string representation."""
         return (
             f"Title:{self.title}\tAuthor:{self.author}\tClippings:{len(self.clippings)}"
@@ -49,28 +51,23 @@ class Book:
 class Clipping:
     """Information about a single clipping."""
 
-    def __init__(self, title, author, metadata, content):
+    def __init__(self, title: str, author: str, metadata: str, content: str) -> None:
         """Basic initialization for a clipping."""
         self.title = title
         self.author = author
         self.metadata = metadata
         self.content = content
-        self.type = None
-        self.page = None
-        self.position_start = None
-        self.position_end = None
-        self.date = None
 
-    def get_header(self):
+    def get_header(self) -> str:
         """Get a header for the clipping."""
         return self.metadata.replace("- ", "** ")
 
-    def get_wrap_content(self):
+    def get_wrap_content(self) -> str:
         """Get a word wrap text from content."""
         clean_text = self.content.replace("\n", " ")
         return "\n".join(wrap(clean_text, 80))
 
-    def parse_metadata(self, language):
+    def parse_metadata(self, language: str) -> None:
         """Extract information from metadata line."""
         if self.metadata:
             if re.search("subrayado", self.metadata, re.IGNORECASE):
@@ -97,7 +94,7 @@ class Clipping:
             #     h.date = dateparser.parse(match_date.group(1))
 
     @classmethod
-    def parse_single_highlight(cls, highlight_string):
+    def parse_single_highlight(cls, highlight_string: str) -> Any:
         """Parse a single clipping."""
         splitted_string = highlight_string.split("\n")
         if len(splitted_string) != 4:
@@ -116,7 +113,7 @@ class Clipping:
         return Clipping(title, author, metadata, content)
 
 
-def parser_my_clippings_data(my_clipping_data, language):
+def parser_my_clippings_data(my_clipping_data: str, language: str) -> List[Any]:
     """Parser 'My Clippings.txt' data."""
     clipping_separator = "\n==========\n"
 

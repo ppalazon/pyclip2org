@@ -1,9 +1,10 @@
 """Command-line interface."""
+from pathlib import Path
+
 import click
 
-from pyclip2org import parser
 from pyclip2org import exporter
-from pathlib import Path
+from pyclip2org import parser
 
 
 @click.command()
@@ -23,7 +24,7 @@ from pathlib import Path
     default="en",
     help="'My Clippings.txt' metadata language, (es|en)",
 )
-def main(my_clippings, output_dir, language) -> None:
+def main(my_clippings: str, output_dir: str, language: str) -> None:
     """My Clipping to org-mode notes."""
     directory_path = Path(output_dir)
 

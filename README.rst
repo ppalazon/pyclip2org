@@ -36,13 +36,14 @@ My Clipping to org-mode notes
 Features
 --------
 
-* TODO
-
+* Parse 'My Clippings.txt' generated file
+* Extract highlights, marks and notes
+* Export to org-mode files separated by books
 
 Requirements
 ------------
 
-* TODO
+* You will need a 'My Clippings.txt' file in English or Spanish
 
 
 Installation
@@ -57,6 +58,12 @@ You can install *My Clipping to org-mode notes* via pip_ from PyPI_:
 
 Usage
 -----
+
+Once you've installed, you can execute
+
+.. code:: console
+
+   $ pyclip2org -l en -o ~/org/kindle -c /media/Kindle/documents/My\ Clippings.txt
 
 Please see the `Command-line Reference <Usage_>`_ for details.
 
@@ -86,7 +93,8 @@ Credits
 -------
 
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
-
+This project is based on
+`Managing kindle highlights with Python and GitHub <https://duarteocarmo.com/blog/managing-kindle-highlights-with-python-and-github.html>`_
 
 .. _@cjolowicz: https://github.com/cjolowicz
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
