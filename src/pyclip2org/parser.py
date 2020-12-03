@@ -1,7 +1,8 @@
 """Parse My Clippings highlights from kindle."""
 
 from textwrap3 import wrap
-#import dateparser
+
+# import dateparser
 import re
 
 
@@ -28,19 +29,21 @@ class Book:
 
     def get_hightlights(self):
         """Get all hightlights of the book."""
-        return [m for m in self.clippings if m.type == 'HIGHLIGHT']
+        return [m for m in self.clippings if m.type == "HIGHLIGHT"]
 
     def get_marks(self):
         """Get all marks of the book."""
-        return [m for m in self.clippings if m.type == 'MARK']
+        return [m for m in self.clippings if m.type == "MARK"]
 
     def get_notes(self):
         """Get all notes of the book."""
-        return [m for m in self.clippings if m.type == 'NOTE']
+        return [m for m in self.clippings if m.type == "NOTE"]
 
     def __str__(self):
         """Generate a string representation."""
-        return f"Title:{self.title}\tAuthor:{self.author}\tClippings:{len(self.clippings)}"
+        return (
+            f"Title:{self.title}\tAuthor:{self.author}\tClippings:{len(self.clippings)}"
+        )
 
 
 class Clipping:
@@ -122,7 +125,7 @@ def parser_my_clippings_data(my_clipping_data, language):
     book_title_list = []
     library = []
     for raw_string in clippings:
-        clipping = Clipping.parse_single_highlight(raw_string)        
+        clipping = Clipping.parse_single_highlight(raw_string)
 
         if not clipping:
             continue

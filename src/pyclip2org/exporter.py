@@ -12,7 +12,9 @@ def write_book(book, directory):
         [c for c in book.title if c.isalpha() or c.isdigit() or c == " "]
     ).rstrip()
 
-    book.clippings.sort(key=lambda h: h.position_start if h.position_start else h.page if h.page else 0)
+    book.clippings.sort(
+        key=lambda h: h.position_start if h.position_start else h.page if h.page else 0
+    )
 
     if not directory.is_dir():
         return None
@@ -29,7 +31,7 @@ def write_book(book, directory):
             file.write("\n")
             for h in notes:
                 file.write(f"\n{h.get_header()}\n")
-                file.write(f"\n{h.get_wrap_content()}\n")                    
+                file.write(f"\n{h.get_wrap_content()}\n")
 
         marks = book.get_marks()
         if len(marks) > 0:
@@ -44,8 +46,10 @@ def write_book(book, directory):
             file.write("\n")
             for h in highlights:
                 file.write(f"\n{h.get_header()}\n")
-                file.write(f"\n#+caption: {clean_title} \
-                    ({book.author}) in position {h.position_start}\n")
+                file.write(
+                    f"\n#+caption: {clean_title} \
+                    ({book.author}) in position {h.position_start}\n"
+                )
                 file.write("#+begin_quote\n")
                 file.write(h.get_wrap_content())
                 file.write("\n#+end_quote\n")
