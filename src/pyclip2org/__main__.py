@@ -29,15 +29,13 @@ def main(my_clippings: str, output_dir: str, language: str) -> None:
     directory_path = Path(output_dir)
 
     if language != "en" and language != "es":
-        click.echo(f"Incorrect language {language}, must be 'en' or 'es'")
-        return None
+        raise click.UsageError(f"Incorrect language {language}, must be 'en' or 'es'")
 
     if not directory_path.exists():
         directory_path.mkdir(parents=True)
 
     if not directory_path.is_dir():
-        click.echo("Output directory is not a folder")
-        return None
+        raise click.UsageError("Output directory is not a folder")
 
     with open(my_clippings, "r") as file:
         data = file.read()

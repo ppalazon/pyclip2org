@@ -41,7 +41,7 @@ def write_book(book: Any, directory: Any) -> None:
             for h in marks:
                 file.write(f"\n{h.get_header()}\n")
 
-        highlights = book.get_hightlights()
+        highlights = book.get_highlights()
         if len(highlights) > 0:
             file.write("* Highlights")
             file.write("\n")
