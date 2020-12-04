@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyclip2org"
-version = "0.1.0"
+version = "0.1.1"
 description = "My Clipping to org-mode notes"
 authors = ["Pablo Palazon <pablo.palazon@gmail.com>"]
 license = "MIT"
