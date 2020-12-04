@@ -10,7 +10,7 @@ python-versions = "*"
 name = "appdirs"
 version = "1.4.4"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -18,7 +18,7 @@ python-versions = "*"
 name = "argcomplete"
 version = "1.12.2"
 description = "Bash tab completion for argparse"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -154,7 +154,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "colorama"
 version = "0.4.4"
 description = "Cross-platform colored terminal text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -162,7 +162,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "colorlog"
 version = "4.6.2"
 description = "Log formatting with colors!"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -200,27 +200,10 @@ optional = false
 python-versions = ">=3.6, <3.7"
 
 [[package]]
-name = "dateparser"
-version = "1.0.0"
-description = "Date parsing library designed to parse dates from HTML pages"
-category = "main"
-optional = false
-python-versions = ">=3.5"
-
-[package.dependencies]
-python-dateutil = "*"
-pytz = "*"
-regex = "!=2019.02.19"
-tzlocal = "*"
-
-[package.extras]
-calendars = ["convertdate", "hijri-converter", "convertdate"]
-
-[[package]]
 name = "distlib"
 version = "0.3.1"
 description = "Distribution utilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -252,7 +235,7 @@ pipenv = ["pipenv"]
 name = "filelock"
 version = "3.0.12"
 description = "A platform independent file lock."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -387,7 +370,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "importlib-metadata"
 version = "3.1.1"
 description = "Read metadata from Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -402,7 +385,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 name = "importlib-resources"
 version = "3.3.0"
 description = "Read resources from Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
@@ -498,7 +481,7 @@ python-versions = "*"
 name = "nox"
 version = "2020.8.22"
 description = "Flexible test automation."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.5"
 
@@ -516,24 +499,12 @@ tox_to_nox = ["jinja2", "tox"]
 name = "nox-poetry"
 version = "0.5.0"
 description = "nox-poetry"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6.1,<4.0.0"
 
 [package.dependencies]
 nox = ">=2020.5.24,<2021.0.0"
-
-[[package]]
-name = "orgparse"
-version = "0.2.1"
-description = "orgparse - Emacs org-mode parser in Python"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.extras]
-linting = ["pytest", "mypy", "lxml"]
-testing = ["pytest"]
 
 [[package]]
 name = "packaging"
@@ -621,7 +592,7 @@ toml = "*"
 name = "py"
 version = "1.9.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -692,17 +663,6 @@ checkqa_mypy = ["mypy (==0.780)"]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
-name = "python-dateutil"
-version = "2.8.1"
-description = "Extensions to the standard Python datetime module"
-category = "main"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-
-[package.dependencies]
-six = ">=1.5"
-
-[[package]]
 name = "python-slugify"
 version = "4.0.1"
 description = "A Python Slugify application that handles Unicode"
@@ -720,7 +680,7 @@ unidecode = ["Unidecode (>=1.1.1)"]
 name = "pytz"
 version = "2020.4"
 description = "World timezone definitions, modern and historical"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -736,7 +696,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "regex"
 version = "2020.11.13"
 description = "Alternative regular expression module, to replace re."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -832,7 +792,7 @@ requests = "*"
 name = "six"
 version = "1.15.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -1068,17 +1028,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "tzlocal"
-version = "2.1"
-description = "tzinfo object for the local timezone"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-pytz = "*"
-
-[[package]]
 name = "urllib3"
 version = "1.26.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -1095,7 +1044,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 name = "virtualenv"
 version = "20.2.1"
 description = "Virtual Python Environment builder"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
 
@@ -1135,7 +1084,7 @@ tests = ["pytest", "pytest-cov", "codecov", "scikit-build", "cmake", "ninja", "p
 name = "zipp"
 version = "3.4.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -1146,7 +1095,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "952fe093b0af4f05b69f46111034b45ea5ae9fa7599a402b1f033f2801801e29"
+content-hash = "1ffe08ddf24d06d14100ee7ee81464f737dab106268baab4ef7522aec90fce84"
 
 [metadata.files]
 alabaster = [
@@ -1255,10 +1204,6 @@ darglint = [
 dataclasses = [
     {file = "dataclasses-0.8-py3-none-any.whl", hash = "sha256:0201d89fa866f68c8ebd9d08ee6ff50c0b255f8ec63a71c16fda7af82bb887bf"},
     {file = "dataclasses-0.8.tar.gz", hash = "sha256:8479067f342acf957dc82ec415d355ab5edb7e7646b90dc6e2fd1d96ad084c97"},
-]
-dateparser = [
-    {file = "dateparser-1.0.0-py2.py3-none-any.whl", hash = "sha256:17202df32c7a36e773136ff353aa3767e987f8b3e27374c39fd21a30a803d6f8"},
-    {file = "dateparser-1.0.0.tar.gz", hash = "sha256:159cc4e01a593706a15cd4e269a0b3345edf3aef8bf9278a57dac8adf5bf1e4a"},
 ]
 distlib = [
     {file = "distlib-0.3.1-py2.py3-none-any.whl", hash = "sha256:8c09de2c67b3e7deef7184574fc060ab8a793e7adbb183d942c389c8b13c52fb"},
@@ -1408,10 +1353,6 @@ nox-poetry = [
     {file = "nox-poetry-0.5.0.tar.gz", hash = "sha256:747fbf668cff21216847737f161cc22c1676c9c896caf476a910c310f0f6b8eb"},
     {file = "nox_poetry-0.5.0-py3-none-any.whl", hash = "sha256:58e63a9572b7a45464af411cade4b5b34769bdbfdd8bedbeee2b73f6b9f86d0f"},
 ]
-orgparse = [
-    {file = "orgparse-0.2.1-py3-none-any.whl", hash = "sha256:dda28db7b90a2573040a62f767c5eb5c0a003003f5b1b78a033e5b6e57aad6b6"},
-    {file = "orgparse-0.2.1.tar.gz", hash = "sha256:f510f76340f565b5047510226716837caecb3bb6bd7359ef9c054279e12d5e05"},
-]
 packaging = [
     {file = "packaging-20.7-py2.py3-none-any.whl", hash = "sha256:eb41423378682dadb7166144a4926e443093863024de508ca5c9737d6bc08376"},
     {file = "packaging-20.7.tar.gz", hash = "sha256:05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236"},
@@ -1467,10 +1408,6 @@ pyparsing = [
 pytest = [
     {file = "pytest-6.1.2-py3-none-any.whl", hash = "sha256:4288fed0d9153d9646bfcdf0c0428197dba1ecb27a33bb6e031d002fa88653fe"},
     {file = "pytest-6.1.2.tar.gz", hash = "sha256:c0a7e94a8cdbc5422a51ccdad8e6f1024795939cc89159a0ae7f0b316ad3823e"},
-]
-python-dateutil = [
-    {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
-    {file = "python_dateutil-2.8.1-py2.py3-none-any.whl", hash = "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"},
 ]
 python-slugify = [
     {file = "python-slugify-4.0.1.tar.gz", hash = "sha256:69a517766e00c1268e5bbfc0d010a0a8508de0b18d30ad5a1ff357f8ae724270"},
@@ -1723,10 +1660,6 @@ typing-extensions = [
     {file = "typing_extensions-3.7.4.3-py2-none-any.whl", hash = "sha256:dafc7639cde7f1b6e1acc0f457842a83e722ccca8eef5270af2d74792619a89f"},
     {file = "typing_extensions-3.7.4.3-py3-none-any.whl", hash = "sha256:7cb407020f00f7bfc3cb3e7881628838e69d8f3fcab2f64742a5e76b2f841918"},
     {file = "typing_extensions-3.7.4.3.tar.gz", hash = "sha256:99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c"},
-]
-tzlocal = [
-    {file = "tzlocal-2.1-py2.py3-none-any.whl", hash = "sha256:e2cb6c6b5b604af38597403e9852872d7f534962ae2954c7f35efcb1ccacf4a4"},
-    {file = "tzlocal-2.1.tar.gz", hash = "sha256:643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.2-py2.py3-none-any.whl", hash = "sha256:d8ff90d979214d7b4f8ce956e80f4028fc6860e4431f731ea4a8c08f23f99473"},
