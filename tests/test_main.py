@@ -2,7 +2,7 @@
 import string
 
 import pytest
-import urandom
+import secrets
 from click.testing import CliRunner
 
 from pyclip2org import __main__
@@ -28,7 +28,7 @@ def test_main_succeed_es(runner: CliRunner) -> None:
 
 def test_main_random_output(runner: CliRunner) -> None:
     """It exits with a status code of zero."""
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     result = runner.invoke(
         __main__.main, f"-c tests/clippings-es.txt -o /tmp/{output_random}"
     )
@@ -37,7 +37,7 @@ def test_main_random_output(runner: CliRunner) -> None:
 
 def test_main_error_output(runner: CliRunner) -> None:
     """It exits with a status code of zero."""
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
 
     with open(f"/tmp/{output_random}", "w") as file:
         file.write("This is a test")

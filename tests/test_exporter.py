@@ -2,7 +2,7 @@
 import string
 from pathlib import Path
 
-import urandom
+import secrets
 
 from pyclip2org import exporter
 from pyclip2org.parser import Book
@@ -13,7 +13,7 @@ def test_export_empty_book() -> None:
     """Write empty book."""
     book = Book("", "Author 1")
 
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     output = Path(output_random)
 
     # with open(f'/tmp/{output_random}', 'w') as file:
@@ -28,7 +28,7 @@ def test_export_empty_clippings() -> None:
     """Write book with no clippings."""
     book = Book("Test", "Author 1")
 
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     output = Path("/tmp") / output_random
 
     # with open(f'/tmp/{output_random}', 'w') as file:
@@ -47,7 +47,7 @@ def test_export_empty_output() -> None:
     clipping = Clipping("Test", "Test", "Test", "Test")
     book.add_clipping(clipping)
 
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     output = Path("/tmp") / output_random
 
     # with open(f'/tmp/{output_random}', 'w') as file:
@@ -66,7 +66,7 @@ def test_export_incorrect_output() -> None:
     clipping = Clipping("Test", "Test", "Test", "Test")
     book.add_clipping(clipping)
 
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     output = Path("/tmp") / output_random
 
     with output.open("w") as file:
@@ -85,7 +85,7 @@ def test_export_basic_book() -> None:
     clipping = Clipping("Test", "Test", "Test", "Test")
     book.add_clipping(clipping)
 
-    output_random = "".join(urandom.choice(string.hexdigits) for i in range(7))
+    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
     output = Path("/tmp") / output_random
 
     output.mkdir(parents=True)
