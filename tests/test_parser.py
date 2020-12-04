@@ -1,4 +1,4 @@
-"""Testing parser.py module"""
+"""Testing parser.py module."""
 from pyclip2org import parser
 from pyclip2org.parser import Book
 from pyclip2org.parser import Clipping
@@ -74,9 +74,10 @@ def test_parse_multiple_books_es() -> None:
 Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?
 ==========
 Book 1 (Author 1)
-- Tu subrayado en la página 23 | Posición 2015-2065 | Añadido el lunes, 4 de agosto de 2014 19:52:23
+- Tu subrayado en la página 23 | Posición 2015-2065 | Añadido el lunes, 4 de \\
+agosto de 2014 19:52:23
 
-Delectus hic ipsam iure quae exercitationem distinctio voluptatem autem aliquam assumenda reiciendis, soluta velit ab quidem adipisci eligendi vitae quia laboriosam ratione eos aliquam, ipsam aspernatur perferendis modi quidem sunt, quibusdam placeat voluptas laboriosam.
+Delectus hic ipsam iure quae exercitationem distinctio voluptatem.
 ==========
 Book 2 (Spanish Edition) (Author 2)
 - Mi marcador Posición 1012 | Añadido el sábado 9 de febrero de 2013, 10:40:33
@@ -127,7 +128,7 @@ def test_parse_single_highlight_es() -> None:
     raw_string = """Book 2 (Spanish Edition) (Author 2)
 - Tu subrayado en la página 23 | Posición 2015-2065 | Añadido el lunes, 4 de agosto de 2014 19:52:23
 
-Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"""
+Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"""
 
     clipping = Clipping.parse_single_highlight(raw_string)
 
@@ -140,7 +141,7 @@ Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad e
     )
     assert (
         clipping.content
-        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"
+        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"
     )
 
     clipping.parse_metadata("es")
@@ -185,7 +186,7 @@ Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?
 Book 1 (Author 1)
 - Your Highlight on Page 73 | Location 1111-1111 | Added on Saturday, November 15, 2014 11:00:28
 
-Delectus hic ipsam iure quae exercitationem distinctio voluptatem autem aliquam assumenda reiciendis, soluta velit ab quidem adipisci eligendi vitae quia laboriosam ratione eos aliquam, ipsam aspernatur perferendis modi quidem sunt, quibusdam placeat voluptas laboriosam.
+Delectus hic ipsam iure quae exercitationem distinctio voluptatem autem aliquam assumenda reiciendis.
 ==========
 Book 2 (Spanish Edition) (Author 2)
 - Your Bookmark on Location 1012 | Added on Saturday, February 9, 2013 10:40:33
@@ -214,7 +215,7 @@ Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?
 Book 1 (Author 1)
 - Your Highlight on Page 73 | Location 1111-1111 | Added on Saturday, November 15, 2014 11:00:28
 
-Delectus hic ipsam iure quae exercitationem distinctio voluptatem autem aliquam assumenda reiciendis, soluta velit ab quidem adipisci eligendi vitae quia laboriosam ratione eos aliquam, ipsam aspernatur perferendis modi quidem sunt, quibusdam placeat voluptas laboriosam.
+Delectus hic ipsam iure quae exercitationem distinctio voluptatem autem aliquam assumenda reiciendis.
 ==========
 Book 2 (Spanish Edition) (Author 2)
 - Your Bookmark on Location 1012 | Added on Saturday, February 9, 2013 10:40:33
@@ -265,7 +266,7 @@ def test_parse_single_highlight_en() -> None:
     raw_string = """Book 2 (Spanish Edition) (Author 2)
 - Your Highlight on Page 104 | Location 1581-1586 | Added on Thuesday, February 7, 2013 15:54:12
 
-Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"""
+Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"""
 
     clipping = Clipping.parse_single_highlight(raw_string)
 
@@ -278,7 +279,7 @@ Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad e
     )
     assert (
         clipping.content
-        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"
+        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"
     )
 
     clipping.parse_metadata("en")
@@ -342,7 +343,7 @@ def test_parse_single_highlight_en_incomplete() -> None:
     raw_string = """Book 2 (Spanish Edition) (Author 2)
 - Your Highlight on
 
-Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"""
+Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"""
 
     clipping = Clipping.parse_single_highlight(raw_string)
 
@@ -352,7 +353,7 @@ Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad e
     assert clipping.metadata == "- Your Highlight on"
     assert (
         clipping.content
-        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"
+        == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos"
     )
 
     clipping.parse_metadata("en")
