@@ -1,8 +1,7 @@
 """Testing exporting."""
+import secrets
 import string
 from pathlib import Path
-
-import secrets
 
 from pyclip2org import exporter
 from pyclip2org.parser import Book

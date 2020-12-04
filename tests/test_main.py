@@ -1,8 +1,8 @@
 """Test cases for the __main__ module."""
+import secrets
 import string
 
 import pytest
-import secrets
 from click.testing import CliRunner
 
 from pyclip2org import __main__
