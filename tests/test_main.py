@@ -1,6 +1,8 @@
 """Test cases for the __main__ module."""
+import os
 import secrets
 import string
+import tempfile
 
 import pytest
 from click.testing import CliRunner
@@ -28,22 +30,28 @@ def test_main_succeed_es(runner: CliRunner) -> None:
 
 def test_main_random_output(runner: CliRunner) -> None:
     """It exits with a status code of zero."""
-    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
+    output_random = os.path.join(
+        tempfile.gettempdir(),
+        "".join(secrets.choice(string.hexdigits) for i in range(7)),
+    )
     result = runner.invoke(
-        __main__.main, f"-c tests/clippings-es.txt -o /tmp/{output_random}"
+        __main__.main, f"-c tests/clippings-es.txt -o {output_random}"
     )
     assert result.exit_code == 0
 
 
 def test_main_error_output(runner: CliRunner) -> None:
     """It exits with a status code of zero."""
-    output_random = "".join(secrets.choice(string.hexdigits) for i in range(7))
+    output_random = os.path.join(
+        tempfile.gettempdir(),
+        "".join(secrets.choice(string.hexdigits) for i in range(7)),
+    )
 
-    with open(f"/tmp/{output_random}", "w") as file:
+    with open(output_random, "w") as file:
         file.write("This is a test")
 
     result = runner.invoke(
-        __main__.main, f"-c tests/clippings-es.txt -o /tmp/{output_random}"
+        __main__.main, f"-c tests/clippings-es.txt -o {output_random}"
     )
     assert result.exit_code != 0
 
