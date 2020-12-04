@@ -1,11 +1,11 @@
 """Testing exporting."""
-
-
-from pyclip2org.parser import Book, Clipping
-from pyclip2org import exporter
-from pathlib import Path
 import random
 import string
+from pathlib import Path
+
+from pyclip2org import exporter
+from pyclip2org.parser import Book
+from pyclip2org.parser import Clipping
 
 
 def test_export_empty_book() -> None:
@@ -68,8 +68,8 @@ def test_export_incorrect_output() -> None:
     output_random = "".join(random.choice(string.hexdigits) for i in range(7))
     output = Path("/tmp") / output_random
 
-    with output.open('w') as file:
-        file.write('This is a test')
+    with output.open("w") as file:
+        file.write("This is a test")
 
     exporter.write_book(book, output)
 

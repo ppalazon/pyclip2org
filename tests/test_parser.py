@@ -1,8 +1,7 @@
 """Testing parser.py module"""
-
-
-from pyclip2org.parser import Clipping, Book
 from pyclip2org import parser
+from pyclip2org.parser import Book
+from pyclip2org.parser import Clipping
 
 
 def test_book_add_none_clipping() -> None:
@@ -23,8 +22,14 @@ def test_clipping_head() -> None:
         "Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?",
     )
 
-    assert clipping.get_header() == "** Mi nota Posición 128 | Añadido el miércoles 6 de febrero de 2013, 13:00:19"
-    assert clipping.get_wrap_content() == "Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?"
+    assert (
+        clipping.get_header()
+        == "** Mi nota Posición 128 | Añadido el miércoles 6 de febrero de 2013, 13:00:19"
+    )
+    assert (
+        clipping.get_wrap_content()
+        == "Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?"
+    )
 
 
 def test_parse_bad_clipping_size() -> None:
@@ -320,10 +325,7 @@ Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?"""
     assert clipping is not None
     assert clipping.title == "Book 1"
     assert clipping.author == "Author 1"
-    assert (
-        clipping.metadata
-        == "- Your note on"
-    )
+    assert clipping.metadata == "- Your note on"
     assert (
         clipping.content
         == "Magni iste minus vitae, laudantium vero laborum obcaecati recusandae ipsum?"
@@ -347,10 +349,7 @@ Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad e
     assert clipping is not None
     assert clipping.title == "Book 2 (Spanish Edition)"
     assert clipping.author == "Author 2"
-    assert (
-        clipping.metadata
-        == "- Your Highlight on"
-    )
+    assert clipping.metadata == "- Your Highlight on"
     assert (
         clipping.content
         == "Omnis animi sunt praesentium beatae fugiat, sequi hic debitis deleniti eum, ad eaque dignissimos minus nihil nemo cupiditate, veritatis rem eligendi provident perferendis facilis, at tenetur blanditiis perferendis earum?"
@@ -376,10 +375,7 @@ def test_parse_single_mark_en_incomplete() -> None:
     assert clipping is not None
     assert clipping.title == "Book 2 (Spanish Edition)"
     assert clipping.author == "Author 2"
-    assert (
-        clipping.metadata
-        == "- Your Bookmark on"
-    )
+    assert clipping.metadata == "- Your Bookmark on"
     assert clipping.content == ""
 
     clipping.parse_metadata("en")

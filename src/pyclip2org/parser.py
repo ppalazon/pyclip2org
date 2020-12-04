@@ -18,7 +18,7 @@ regexp_map = {
         "regexp_date": re.compile(r"añadido el\s+(.+)$", re.IGNORECASE),
         "regexp_note": re.compile(r"nota", re.IGNORECASE),
         "regexp_highlight": re.compile(r"subrayado", re.IGNORECASE),
-        "regexp_mark": re.compile(r"marcador", re.IGNORECASE)
+        "regexp_mark": re.compile(r"marcador", re.IGNORECASE),
     },
     "en": {
         "regexp_page": re.compile(r"page ([0-9]+)", re.IGNORECASE),
@@ -29,7 +29,7 @@ regexp_map = {
         "regexp_date": re.compile(r"added on\s+(.+)$", re.IGNORECASE),
         "regexp_note": re.compile(r"note", re.IGNORECASE),
         "regexp_highlight": re.compile(r"highlight", re.IGNORECASE),
-        "regexp_mark": re.compile(r"bookmark", re.IGNORECASE)
+        "regexp_mark": re.compile(r"bookmark", re.IGNORECASE),
     },
 }
 
